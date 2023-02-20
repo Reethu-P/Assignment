@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int find_lowest(int numbers[], int n) {
+    // Initialize the minimum number with the first number in the array
+    int min_num = numbers[0];
+    
+    // Traverse the array and update the minimum number if a smaller number is found
+    for (int i = 1; i < n; i++) {
+        if (numbers[i] < min_num) {
+            min_num = numbers[i];
+        }
+    }
+    
+    // Return the minimum number
+    return min_num;
+}
+
+int main() {
+    int numbers[] = {5, 3, 8, 1, 9, 2};
+    int n = sizeof(numbers) / sizeof(numbers[0]);
+    
+    int lowest_num = find_lowest(numbers, n);
+    printf("The lowest number is: %d\n", lowest_num);
+    
+    return 0;
+}
